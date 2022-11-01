@@ -8,7 +8,7 @@ export default function Link(){
         <div className="pt-5 text-center" style={{position:"relative"}}>
             
                 <img src={imgsrc} alt="" width="100px" height="100px" className="rounded-circle" />
-                <span className="icon pb-1 px-1 border border-secondary rounded-circle"><IoArrowRedoOutline className="d-none d-md-inline"  /><BsThreeDots className="d-md-none" /> </span>
+                <span className="icon pb-1 px-1" style={{borderRadius: "20px", border: '1px dashed #D0D5DD'}}><IoArrowRedoOutline className="d-none d-md-inline"  /><BsThreeDots className="d-md-none" /> </span>
            
         </div>
         </div>
