@@ -1,14 +1,29 @@
 import './App.css';
-import Profile from "./Components/Profile"
-import Link from "./Components/Link"
+import Linktree from './Pages/Linktree';
+import Contact from './Pages/Contact';
 import Footer from "./Components/Footer"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-     <Profile />
-     <Link />
-     <Footer />
+      <Router>
+        <Routes>
+          <Route exact path='/'
+            element={
+              <Linktree />
+            }
+          >
+          </Route>
+          <Route exact path='/contact'
+            element={
+              <Contact />
+            }
+          >
+          </Route>
+        </Routes>
+      </Router>
+      <Footer />
     </div>
   );
 }
