@@ -1,23 +1,70 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.icon{
-position:absolute;
-right:0;
-left:auto;
+/* Lintree */
+.icon {
+    position: absolute;
+    right: 0;
+    left: auto;
 }
-.bold{
-    font-weight:500
+
+.bold {
+    font-weight: 500
 }
-.btn-light{
+
+.btn-light {
     background-color: #EAECF0 !important;
     border: 1px solid #EAECF0 !important;
 }
-@media(min-width:967px){
-    .icon{
-        right:37vh;
+
+/* Contact */
+.container-contact {
+    padding-bottom: 50px;
+    margin-top: 50px;
+}
+
+input {
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    padding: 10px 14px;
+}
+
+textarea {
+    resize: none;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+}
+
+.btn-contact {
+    background: #1570EF;
+    padding: 12px 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    border: 1px solid #1570EF;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+
+}
+
+@media(min-width:787px) {
+    .container-contact {
+        max-width: 740px !important
+    }
+}
+
+@media(min-width:967px) {
+    .icon {
+        right: 37vh;
     }
 }
