@@ -7,6 +7,7 @@ export default function Contact() {
     const name = "Priscilla"
     const [textEmpty, setEmptyText] = useState(false)
     const [text, setText] = useState('')
+    const [notCheck, setCheck] = useState(true)
     const [classed, setClass] = useState('')
     const handleChange = (e) => {
         const newValue = e.target.value
@@ -14,7 +15,6 @@ export default function Contact() {
     }
     const handleClick = (e) => {
         e.preventDefault()
-        console.log("working")
         if (text === '') {
             setEmptyText(true)
             setClass('text-input-outline')
@@ -23,6 +23,16 @@ export default function Contact() {
             setEmptyText(false)
             setClass('')
             setText('')
+        }
+    }
+    const handleCheckChange = (e) => {
+        if (e.target.checked) {
+           setCheck(false)
+           console.log('checked')
+        }
+        else {
+            setCheck(true)
+            console.log('notChecked')
         }
     }
     return (
@@ -50,10 +60,12 @@ export default function Contact() {
                     <div>{textEmpty ? <Result /> : null}</div>
                 </div>
                 <div className="d-flex mb-3 align-items-start">
-                    <input type="checkbox" className="mt-2 me-3" />
-                    <label>You agree to providing your data to {name} who may contact you.</label>
+                    <input type="checkbox" className="mt-2 me-3" onChange={handleCheckChange} value={notCheck} />
+                    <span>You agree to providing your data to {name} who may contact you.</span>
                 </div>
-                <input type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} />
+                
+                {notCheck ? <input  type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} disabled  /> : <input  type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick}  />};
+        
             </form>
         </section>
     )
