@@ -88,7 +88,7 @@ export default function Contact() {
                     <span>You agree to providing your data to {name} who may contact you.</span>
                 </div>
 
-                {notCheck ? <input type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} disabled /> : <input type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} />};
+                {notCheck ? <input type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} disabled /> : <input type="submit" id="btn__submit" className="w-100 btn-contact" value="Send message" onClick={handleClick} />}
 
             </form>
         </section>
