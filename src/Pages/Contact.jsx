@@ -7,11 +7,26 @@ export default function Contact() {
     const name = "Priscilla"
     const [textEmpty, setEmptyText] = useState(false)
     const [text, setText] = useState('')
+    const [firstNameText, setFirstNameText] = useState('')
+    const [lastNameText, setLastNameText] = useState('')
+    const [email, setEmailText] = useState('')
     const [notCheck, setCheck] = useState(true)
     const [classed, setClass] = useState('')
     const handleChange = (e) => {
         const newValue = e.target.value
         setText(newValue)
+    }
+    const handlefirstChange = (e) => {
+        const newValue = e.target.value
+        setFirstNameText(newValue)
+    }
+    const handlelastChange = (e) => {
+        const newValue = e.target.value
+        setLastNameText(newValue)
+    }
+    const handleemailChange = (e) => {
+        const newValue = e.target.value
+        setEmailText(newValue)
     }
     const handleClick = (e) => {
         e.preventDefault()
@@ -23,6 +38,9 @@ export default function Contact() {
             setEmptyText(false)
             setClass('')
             setText('')
+            setEmailText('')
+            setFirstNameText('')
+            setLastNameText('')
         }
     }
     const handleCheckChange = (e) => {
@@ -43,16 +61,16 @@ export default function Contact() {
                 <div className="row mb-3">
                     <div className="col-12 col-md-6 mb-3 mb-md-0">
                         <label>First name</label>
-                        <input type="text" placeholder="Enter your first name" id='first_name' className="w-100" />
+                        <input type="text" placeholder="Enter your first name" onChange={handlefirstChange} value={firstNameText} id='first_name' className="w-100" />
                     </div>
                     <div className="col-12 col-md-6">
                         <label>Last name</label>
-                        <input type="text" placeholder="Enter your last name" id='last_name' className="w-100" />
+                        <input type="text" placeholder="Enter your last name" onChange={handlelastChange} value={lastNameText} id='last_name' className="w-100" />
                     </div>
                 </div>
                 <div className="mb-3">
                     <label>Email</label>
-                    <input type="email" placeholder="yourname@email.com" id='email' className="w-100" />
+                    <input type="email" placeholder="yourname@email.com" onChange={handleemailChange} value={email} id='email' className="w-100" />
                 </div>
                 <div className="mb-3">
                     <label>Message</label>
